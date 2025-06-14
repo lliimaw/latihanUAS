@@ -28,6 +28,7 @@ a {
   padding: 0 20px;
 }
 
+/* === BUTTON COLORS === */
 button,
 .newsletter button {
   padding: 12px 20px;
@@ -39,7 +40,6 @@ button,
   transition: background 0.3s ease;
 }
 
-/* === BUTTON COLORS === */
 button {
   background-color: #007acc;
   color: white;
@@ -216,7 +216,6 @@ header .container {
   box-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
 }
 
-
 /* === FORM & INPUT === */
 form {
   display: grid;
@@ -251,12 +250,12 @@ select:focus {
   outline: none;
 }
 
-/* === HASIL PENCARIAN === */
+/* === HASIL PENCARIAN === */ 
 .hasil-pencarian {
   display: none;
   margin-top: 20px;
   padding: 20px;
-  background: #e1f5fe;
+  background: #f0f8ff;
   border-left: 5px solid #0288d1;
   border-radius: 8px;
   font-size: 16px;
@@ -296,7 +295,8 @@ select:focus {
 }
 
 .features li img {
-  width: 60px;
+  width: 50%;
+  border-radius: 10%;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
