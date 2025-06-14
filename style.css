@@ -1,4 +1,4 @@
-/* === RESET & DASAR === */
+/* === RESET & BASE === */
 * {
   margin: 0;
   padding: 0;
@@ -6,33 +6,72 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f8;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc;
   color: #333;
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 20px;
+}
+
+button,
+.newsletter button {
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* === BUTTON COLORS === */
+button {
+  background-color: #007acc;
+  color: white;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+.newsletter button {
+  background-color: #ff9800;
+  border-radius: 6px;
+  color: white;
+}
+
+.newsletter button:hover {
+  background-color: #f57c00;
 }
 
 /* === HEADER === */
 header {
-  background-image: url('assets/travel.jpg');
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  padding: 60px 0;
+  background: url('assets/travel.jpg') center/cover no-repeat;
   color: white;
+  padding: 80px 0;
+  position: relative;
 }
 
 header::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 header .container {
@@ -42,46 +81,45 @@ header .container {
 }
 
 .logo h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .main-nav ul {
-  list-style: none;
   display: flex;
   justify-content: center;
-  gap: 25px;
-  margin-top: 20px;
+  gap: 30px;
+  margin-top: 25px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 
 .main-nav a {
   color: #fff;
-  text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  font-size: 16px;
 }
 
 .main-nav a:hover {
-  color: #ffcc00;
+  color: #00d9ff;
 }
 
-/* === HERO === */
+/* === HERO SECTION === */
 .hero {
-  background-color: #fff;
+  background: #fff;
+  padding: 80px 20px;
+  margin: -60px auto 40px;
   text-align: center;
-  padding: 60px 20px;
-  margin-top: -60px;
+  max-width: 960px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero h2 {
-  font-size: 32px;
-  color: #0288d1;
-  margin-bottom: 15px;
+  font-size: 36px;
+  color: #007acc;
+  margin-bottom: 20px;
 }
 
 .hero p {
@@ -91,34 +129,95 @@ header .container {
 }
 
 .cta-button {
-  display: inline-block;
-  background-color: #0288d1;
+  background-color: #007acc;
   color: white;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: 30px;
-  text-decoration: none;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #0277bd;
+  background-color: #005fa3;
 }
 
-/* === SEARCH SECTION === */
-.search-section {
-  background: #fff;
-  padding: 50px 20px;
+.cta-wrapper {
   text-align: center;
+  margin-top: 30px;
+}
+
+/* === SECTION PLACEHOLDER === */
+.section-placeholder {
+  background: #fff;
+  padding: 60px 20px;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.section-placeholder h3 {
+  color: #007acc;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-placeholder p {
+  color: #555;
+  text-align: center;
+}
+
+/* === FITUR RINGKAS === */
+.fitur-ringkas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
   margin-top: 40px;
 }
 
-.search-section h3 {
-  font-size: 24px;
-  color: #0288d1;
-  margin-bottom: 30px;
+.fitur-item {
+  background: #fff;
+  padding: 30px;
+  width: 280px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
+.fitur-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.fitur-item img {
+  width: 60px;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.fitur-item:hover img {
+  transform: scale(1.1);
+}
+
+.fitur-item h4 {
+  font-size: 18px;
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+.fitur-item p {
+  font-size: 15px;
+  color: #666;
+}
+
+.fitur-item.aktif {
+  border: 2px solid #007acc;
+  box-shadow: 0 0 10px rgba(0, 122, 204, 0.3);
+}
+
+
+/* === FORM & INPUT === */
 form {
   display: grid;
   gap: 20px;
@@ -130,36 +229,43 @@ form {
   text-align: left;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="email"] {
+input,
+textarea,
+select {
   width: 100%;
   padding: 12px 16px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  background-color: #fff;
 }
 
-button {
-  padding: 12px;
-  background-color: #0288d1;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #007acc;
+  outline: none;
+}
+
+/* === HASIL PENCARIAN === */
+.hasil-pencarian {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background: #e1f5fe;
+  border-left: 5px solid #0288d1;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #0277bd;
-}
-
-/* === FEATURES === */
+/* === FEATURES SECTION === */
 .features {
+  background: #e3f2fd;
   padding: 60px 20px;
-  background-color: #e3f2fd;
   text-align: center;
 }
 
@@ -174,27 +280,35 @@ button:hover {
   gap: 30px;
   justify-content: center;
   list-style: none;
-  padding: 0;
 }
 
 .features li {
   flex: 1 1 280px;
-  background-color: #fff;
+  background: #fff;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
 }
 
-.features li h4 {
-  font-size: 18px;
-  color: #0288d1;
-  margin-bottom: 10px;
+.features li:hover {
+  transform: translateY(-5px);
+}
+
+.features li img {
+  width: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.features li:hover img {
+  transform: scale(1.1);
 }
 
 /* === TESTIMONIALS === */
 .testimonials {
+  background: #fff;
   padding: 60px 20px;
-  background-color: #fff;
   text-align: center;
 }
 
@@ -206,24 +320,24 @@ button:hover {
 blockquote {
   max-width: 600px;
   margin: 20px auto;
-  padding: 20px;
+  padding: 25px;
   font-style: italic;
   background-color: #f0f0f0;
-  border-left: 5px solid #0288d1;
-  border-radius: 8px;
+  border-left: 5px solid #007acc;
+  border-radius: 10px;
 }
 
 cite {
   display: block;
   margin-top: 10px;
   font-weight: bold;
-  color: #333;
   text-align: right;
+  color: #333;
 }
 
 /* === NEWSLETTER === */
 .newsletter {
-  background-color: #0288d1;
+  background: #007acc;
   color: white;
   padding: 60px 20px;
   text-align: center;
@@ -253,21 +367,6 @@ cite {
   min-width: 250px;
 }
 
-.newsletter button {
-  background-color: #ff9800;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.newsletter button:hover {
-  background-color: #f57c00;
-}
-
 /* === FOOTER === */
 footer {
   background-color: #222;
@@ -281,27 +380,26 @@ footer {
   margin-top: 10px;
   display: flex;
   justify-content: center;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 15px;
 }
 
 .footer-nav a {
   color: #aaa;
-  text-decoration: none;
-  transition: color 0.3s;
 }
 
 .footer-nav a:hover {
   color: white;
 }
 
-/* === RESPONSIVE RINGAN === */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
   .main-nav ul {
     flex-direction: column;
     gap: 15px;
   }
 
+  .fitur-ringkas,
   .features ul {
     flex-direction: column;
   }

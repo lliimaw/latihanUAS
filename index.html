@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css">
   <title>Traveloka Sederhana</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ======= HEADER ======= -->
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="container">
       <div class="logo">
@@ -16,63 +16,129 @@
       </div>
       <nav class="main-nav">
         <ul>
-          <li><a href="#">Beranda</a></li>
-          <li><a href="#">Pesawat</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Kereta</a></li>
-          <li><a href="#">Kontak</a></li>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#pesawat">Pesawat</a></li>
+          <li><a href="#hotel">Hotel</a></li>
+          <li><a href="#kontak">Kontak</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ======= HERO SECTION ======= -->
+  <!-- ===== HERO SECTION ===== -->
   <section class="hero">
     <div class="container">
       <h2>Temukan Tiket dan Penginapan Terbaik</h2>
       <p>Pesan tiket pesawat, hotel, dan kereta dengan mudah dan cepat.</p>
-      <a href="#search" class="cta-button">Mulai Cari</a>
+      <a href="#beranda" class="cta-button">Mulai Cari</a>
     </div>
   </section>
 
-  <!-- ======= SEARCH SECTION ======= -->
-  <section id="search" class="search-section">
+  <!-- ===== BERANDA ===== -->
+  <section id="beranda" class="section-placeholder">
     <div class="container">
-      <h3>Cari Tiket Perjalanan Anda</h3>
-      <form>
+      <h3>Selamat Datang di Traveloka Sederhana</h3>
+      <p>
+        Platform pencarian tiket dan penginapan yang mudah, cepat, dan terpercaya.
+        Temukan penerbangan murah, hotel nyaman, dan tiket kereta terbaik dalam satu tempat.
+      </p>
+      <div class="fitur-ringkas">
+        <div class="fitur-item" data-target="pesawat">
+          <img src="assets/pesawat.png" alt="Pesawat" width="60" />
+          <h4>Tiket Pesawat</h4>
+          <p>Jelajahi destinasi favorit Anda dengan harga terjangkau.</p>
+        </div>
+
+        <div class="fitur-item" data-target="hotel">
+          <img src="assets/hotel.png" alt="Hotel" width="60" />
+          <h4>Hotel Nyaman</h4>
+          <p>Pesan penginapan sesuai kebutuhan dan anggaran Anda.</p>
+        </div>
+      </div>
+      <div class="cta-wrapper">
+        <a href="#pesawat" class="cta-button">Cari Tiket Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PESAWAT ===== -->
+  <section id="pesawat" class="section-placeholder">
+    <div class="container">
+      <h3>Pencarian Tiket Pesawat</h3>
+      <form id="form-pesawat" autocomplete="off">
         <div class="form-group">
-          <label for="from">Dari</label>
-          <input type="text" id="from" name="from" placeholder="Contoh: Jakarta" required>
+          <label for="kota-asal">Kota Asal</label>
+          <input type="text" id="kota-asal" placeholder="Contoh: Jakarta" required />
         </div>
         <div class="form-group">
-          <label for="to">Ke</label>
-          <input type="text" id="to" name="to" placeholder="Contoh: Bali" required>
+          <label for="kota-tujuan">Kota Tujuan</label>
+          <input type="text" id="kota-tujuan" placeholder="Contoh: Bali" required />
         </div>
         <div class="form-group">
-          <label for="date">Tanggal Keberangkatan</label>
-          <input type="date" id="date" name="date" required>
+          <label for="tanggal-berangkat">Tanggal Berangkat</label>
+          <input type="date" id="tanggal-berangkat" required />
         </div>
         <div class="form-group">
-          <button type="submit">Cari Tiket</button>
+          <label for="jumlah-penumpang">Jumlah Penumpang</label>
+          <input type="number" id="jumlah-penumpang" min="1" max="10" value="1" required />
+        </div>
+        <div class="form-group">
+          <button type="submit">Cari Penerbangan</button>
         </div>
       </form>
+      <div id="hasil-pesawat" class="hasil-pencarian"></div>
     </div>
   </section>
 
-  <!-- ======= FEATURES SECTION ======= -->
+  <!-- ===== HOTEL ===== -->
+  <section id="hotel" class="section-placeholder">
+    <div class="container">
+      <h3>Pemesanan Hotel</h3>
+      <form id="form-hotel" autocomplete="off">
+        <div class="form-group">
+          <label for="lokasi-hotel">Pilih Lokasi</label>
+          <select id="lokasi-hotel" required>
+            <option value="">-- Pilih Kota --</option>
+            <option value="jakarta">Jakarta</option>
+            <option value="bandung">Bandung</option>
+            <option value="bali">Bali</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Jenis Hotel</label><br />
+          <input type="radio" name="tipe-hotel" value="standar" checked> Standar<br />
+          <input type="radio" name="tipe-hotel" value="premium"> Premium<br />
+          <input type="radio" name="tipe-hotel" value="mewah"> Mewah
+        </div>
+        <div class="form-group">
+          <label for="lama-inap">Lama Menginap (malam)</label>
+          <input type="number" id="lama-inap" min="1" max="30" value="1" required />
+        </div>
+        <div class="form-group">
+          <button type="submit">Cek Ketersediaan</button>
+        </div>
+      </form>
+      <div id="hasil-hotel" class="hasil-pencarian"></div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
   <section class="features">
     <div class="container">
       <h3>Kenapa Pilih Kami?</h3>
       <ul>
         <li>
+          <img src="assets/price.jpg" alt="Harga Terbaik" />
           <h4>Harga Terbaik</h4>
           <p>Bandingkan dan dapatkan harga terbaik untuk setiap perjalanan Anda.</p>
         </li>
         <li>
+          <img src="assets/easy.jpg" alt="Pemesanan Mudah" />
           <h4>Pemesanan Mudah</h4>
           <p>Antarmuka simpel, cepat, dan aman untuk semua transaksi Anda.</p>
         </li>
         <li>
+          <img src="assets/support.jpg" alt="Layanan 24/7" />
           <h4>Layanan 24/7</h4>
           <p>Tim dukungan kami selalu siap membantu Anda kapan saja.</p>
         </li>
@@ -80,7 +146,7 @@
     </div>
   </section>
 
-  <!-- ======= TESTIMONIALS SECTION ======= -->
+  <!-- ===== TESTIMONIALS ===== -->
   <section class="testimonials">
     <div class="container">
       <h3>Apa Kata Pengguna?</h3>
@@ -95,19 +161,44 @@
     </div>
   </section>
 
-  <!-- ======= NEWSLETTER SECTION ======= -->
+  <!-- ===== KONTAK KAMI ===== -->
+  <section id="kontak" class="section-placeholder">
+    <div class="container">
+      <h3>Hubungi Kami</h3>
+      <form id="form-kontak" autocomplete="off">
+        <div class="form-group">
+          <label for="nama">Nama Anda</label>
+          <input type="text" id="nama" required placeholder="Nama lengkap" />
+        </div>
+        <div class="form-group">
+          <label for="email-kontak">Email</label>
+          <input type="email" id="email-kontak" required placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="pesan">Pesan</label>
+          <textarea id="pesan" rows="5" required placeholder="Tulis pesan Anda di sini..."></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Kirim Pesan</button>
+        </div>
+      </form>
+      <div id="hasil-kontak" class="hasil-pencarian"></div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
   <section class="newsletter">
     <div class="container">
       <h3>Dapatkan Promo Menarik</h3>
       <p>Langganan untuk info promo terbaru langsung ke email Anda.</p>
-      <form>
-        <input type="email" placeholder="Masukkan email Anda" required>
+      <form id="form-newsletter" autocomplete="off">
+        <input type="email" placeholder="Masukkan email Anda" required />
         <button type="submit">Langganan</button>
       </form>
     </div>
   </section>
 
-  <!-- ======= FOOTER ======= -->
+  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Traveloka Sederhana. Seluruh hak cipta dilindungi.</p>
@@ -118,8 +209,9 @@
       </nav>
     </div>
   </footer>
-  
-<script src="script.js"></script>
+
+  <!-- ===== SCRIPT ===== -->
+  <script src="script.js"></script>
 
 </body>
 </html>
